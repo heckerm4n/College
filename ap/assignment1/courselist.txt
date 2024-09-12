@@ -1,0 +1,5 @@
+CSE201,Advanced Programming,Lecture-Tutorial-Lab,4,Mandatory (Core Elective)
+ECE215,Circuit Theory and Devices,Lecture-Tutorial-Lab,4,Mandatory (Core)
+ECE250,Signals & Systems,Lecture,4,Mandatory (Core)
+ECE270,Embedded Logic Design,Lecture-Lab,4,Mandatory (Core)
+MTH203,Course - Maths III,Lecture,4,Mandatory (Core)
