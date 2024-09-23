@@ -1,5 +1,7 @@
 # LINKS
 
+- [pwn college](https://pwn.college/)
+
 ## Courese
 - [CSE365](https://pwn.college/cse365-s2024/)
 ## PWN
