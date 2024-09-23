@@ -1,0 +1,46 @@
+services:
+
+  webapp:
+    container_name: webapp
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile
+    expose:
+      - 10086:10086
+    environment:
+      - DB_HOST=db
+      - DB_NAME=webapp
+      - DB_USERNAME=webb
+      - DB_PASSWORD=IMAYORMAYNOTHAVECHANGEDTHISXDDD!
+      - DB_PORT=5432
+      - SERVER_PORT=10086
+      - FLASK_SECRET=IMAYORMAYNOTHAVECHANGEDTHISXD
+      - ENCRYPT_KEY=IDEFINITELYHAVECHANGEDTHISWHATYOUTHINKIWILLLEAVETHEACTUALENCRYPTIONKEYINTHEDOCKERFILECOMEONMANITSNOTLIKEIHAVEDONETHISONCEINPRODSOMETIMEINMYSOFTWAREDEVELOPMENTJOURNEYANDIDEFINITELYHAVELEARNEDMYMISTAKEANDIWILLSTARTUSINGSOMESORTOFKEYISSUINGSERVICESLIKEVAULTXD
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    image: 'postgres@sha256:1bf73ccae25238fa555100080042f0b2f9be08eb757e200fe6afc1fc413a1b3c'
+    environment:
+      POSTGRES_USER: webb
+      POSTGRES_PASSWORD: IMAYORMAYNOTHAVECHANGEDTHISXDDD!
+      POSTGRES_DB: webapp
+    expose:
+      - 5432:5432
+    
+
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    environment:
+      - WEBAPP_HOST=webapp
+      - WEBAPP_PORT=10086
+    ports:
+      - 9996:9996
+    links:
+      - webapp
+      - db
+
