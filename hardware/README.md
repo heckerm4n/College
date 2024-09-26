@@ -215,8 +215,8 @@ Building an operating system, specifically its **kernel**, is a challenging but 
 
 These resources provide a combination of theoretical and practical knowledge to guide you from understanding how operating systems work to building your own kernel from scratch.
 
-
-### for kernel
+---
+### For kernel
 
 Yes, several of the books and courses I mentioned specifically teach you how to build a kernel (and in some cases, a full operating system) **from scratch**. Below, I’ll highlight the resources that explicitly focus on kernel/OS development from scratch.
 
