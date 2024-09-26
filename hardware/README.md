@@ -216,27 +216,9 @@ Building an operating system, specifically its **kernel**, is a challenging but 
 These resources provide a combination of theoretical and practical knowledge to guide you from understanding how operating systems work to building your own kernel from scratch.
 
 ---
-### For kernel
+## For kernel
 
-Yes, several of the books and courses I mentioned specifically teach you how to build a kernel (and in some cases, a full operating system) **from scratch**. Below, I’ll highlight the resources that explicitly focus on kernel/OS development from scratch.
-
----
-
-#### **Books That Teach Kernel Building from Scratch**:
-
-1. **"Operating Systems: Design and Implementation" by Andrew S. Tanenbaum and Albert S. Woodhull**:
-   - **Focus**: This book walks you through the design and implementation of the MINIX operating system, a small Unix-like microkernel. You’ll get to see the source code and learn how a kernel is built from the ground up.
-   - **Why It’s Great**: It’s an excellent guide for building a working microkernel OS, and the entire kernel source code of MINIX is included for you to study, modify, and build upon.
-
-2. **"Operating Systems: Three Easy Pieces" by Remzi H. Arpaci-Dusseau and Andrea C. Arpaci-Dusseau**:
-   - **Focus**: This book focuses on teaching core OS concepts like processes, memory management, and file systems, which are essential for kernel development. However, the book does not give you a full OS codebase but provides the theoretical understanding to write your own.
-   - **Why It’s Great**: After learning from this book, you will be well-prepared to write your own kernel or OS from scratch.
-
-3. **"Operating System Concepts" by Abraham Silberschatz, Peter B. Galvin, and Greg Gagne**:
-   - **Focus**: While not a hands-on "build your own OS" book, this covers all the core concepts needed to implement your own kernel. It’s a comprehensive introduction to OS internals like process scheduling, virtual memory, and file systems.
-   - **Why It’s Great**: It gives the solid theoretical foundation necessary for kernel programming, which is crucial when you start building a kernel.
-
----
+- [osdev.org](https://wiki.osdev.org/Expanded_Main_Page)
 
 #### **Courses That Teach Kernel Building from Scratch**:
 
