@@ -23,8 +23,8 @@ void render_calendar() {
     WINDOW *cal_win = newwin(15, 30, 1, 1);
     box(cal_win, 0, 0);
     mvwprintw(cal_win, 0, 1, " Calendar ");
-    mvwprintw(cal_win, 7, 10, "Test Calendar");  // Add this line
-    wrefresh(cal_win);  // Make sure to refresh the window
+    mvwprintw(cal_win, 7, 10, "Test Calendar");
+    wrefresh(cal_win);
 }
 
 void add_event(int day, const char *description, int performance) {

@@ -8,6 +8,8 @@
 
 int main() {
     printf("Starting program...\n");  // Add this line
+    fflush(stdout);
+
     initscr();  // Initialize ncurses
     if (has_colors() == FALSE) {
         endwin();
@@ -19,6 +21,9 @@ int main() {
     keypad(stdscr, TRUE);
     noecho();
 
+    printf("Initializing components...\n");  // Add this line
+    fflush(stdout);
+
     // Initialize windows and data structures
     init_calendar();
     init_todo_list();
@@ -28,6 +33,8 @@ int main() {
     init_color_pairs();
 
     printf("Entering main loop...\n");  // Add this line
+    fflush(stdout);
+
     // Main loop
     while (1) {
         clear_screen();

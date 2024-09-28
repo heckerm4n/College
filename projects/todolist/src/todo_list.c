@@ -22,15 +22,7 @@ void render_todo_list() {
     WINDOW *todo_win = newwin(15, 30, 1, 32);
     box(todo_win, 0, 0);
     mvwprintw(todo_win, 0, 1, " Todo List ");
-
-    for (int i = 0; i < task_count; i++) {
-        if (tasks[i].completed) {
-            wattron(todo_win, COLOR_PAIR(3)); // Green for completed tasks
-        }
-        mvwprintw(todo_win, i + 1, 2, "%c %s", tasks[i].completed ? 'x' : ' ', tasks[i].description);
-        wattroff(todo_win, COLOR_PAIR(3));
-    }
-
+    mvwprintw(todo_win, 7, 10, "Test Todo List");
     wrefresh(todo_win);
 }
 
