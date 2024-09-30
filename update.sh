@@ -9,7 +9,7 @@ YELLOW="\033[33m"
 
 # Check if a commit message was provided
 if [ "$#" -ne 1 ]; then
-    echo "Ayush Daaddy"
+    echo "Ayush is my son"
     echo -e "${RED}Usage: $0 \"commit message\"${RESET}"
     exit 1
 fi
