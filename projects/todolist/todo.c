@@ -30,7 +30,6 @@ int main() {
     int start_x = (COLS - width) / 2;
     menu_win = newwin(height, width, start_y, start_x);
     keypad(menu_win, TRUE);
-
     // Print instructions
     mvprintw(0, 0, "Use arrow keys to move, Enter to select a task:");
     refresh();
