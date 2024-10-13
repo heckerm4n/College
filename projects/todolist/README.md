@@ -1,7 +1,14 @@
-### 14/10/24
-made a todo.c now it doesn't save any progress like if an event is marked it isnt saved for next session 
+# Todo List Application
 
+This application helps you manage your tasks and events.
 
-[] save the events for next session
-[] if press t then open a todo tab
-[] next to calander print todo list of that day
+## Features:
+- [ ] Save events for the next session
+- [ ] Press `t` to open a todo tab
+- [ ] Display the todo list of that day next to the calendar
+
+## Instructions:
+1. Run the application using the following command:
+   ```bash
+   ./todo
+
