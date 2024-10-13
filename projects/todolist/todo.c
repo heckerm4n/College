@@ -7,11 +7,10 @@
 #define ROWS 6
 #define COLS 7
 
-int month[ROWS][COLS];  // Calendar grid
-int events[31];         // Mark events for up to 31 days
-int day, monthIndex, year;  // Start with 1st of the month
+int month[ROWS][COLS]; 
+int events[31];       
+int day, monthIndex, year; 
 
-// Utility to get the number of days in a month
 int getDaysInMonth(int month, int year) {
     switch (month) {
         case 4: case 6: case 9: case 11: return 30;  // April, June, September, November
@@ -37,7 +36,6 @@ void disableRawMode() {
     tcsetattr(STDIN_FILENO, TCSANOW, &term);
 }
 
-// Print a border for the table
 void printBorder(int width) {
     for (int i = 0; i < width; i++) {
         printf("-");
@@ -45,35 +43,28 @@ void printBorder(int width) {
     printf("\n");
 }
 
-// Function to print the calendar with assigned space for each column
+// Function to print the calendar 
 void printCalendar(int day, int monthIndex, int year) {
     int daysInMonth = getDaysInMonth(monthIndex + 1, year);
-    int dayOfWeek = 0;  // Start the calendar from Sunday (0)
-    
-    // Clear the screen (simple way for many systems)
+    int dayOfWeek = 0; 
     printf("\033[H\033[J");
 
-    // Print month and year
     printf(" Calendar for %d/%d\n", monthIndex + 1, year);
     printBorder(37);
     
-    // Column headers
     printf("| %-3s | %-2s | %-2s | %-2s | %-2s | %-2s | %-2s |\n", 
            "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa");
     printBorder(37);
 
-    // Fill the calendar grid
     int date = 1;
     for (int row = 0; row < ROWS; row++) {
         printf("| ");
         for (int col = 0; col < COLS; col++) {
             if (date <= daysInMonth && (row > 0 || col >= dayOfWeek)) {
-                // Print the date with 3-character wide space
                 if (row % 2 == 1) {
-                    printf("\033[38;5;157m"); // Light green color
+                    printf("\033[38;5;157m");
                 }
 
-                // Ensure consistent formatting
                 if (date == day) {
                     printf("\033[7m %2d \033[0m|", date);  // Inverse color for the selected day
                 } else if (events[date - 1]) {
@@ -84,7 +75,7 @@ void printCalendar(int day, int monthIndex, int year) {
                 printf("\033[0m");
                 date++;
             } else {
-                printf("    |");  // Empty spaces for days outside the current month
+                printf("    |"); 
             }
         }
         printf("\n");
@@ -92,37 +83,36 @@ void printCalendar(int day, int monthIndex, int year) {
     printBorder(37);
 }
 
-// Main calendar navigation function
 void navigateCalendar() {
     char key;
     int daysInMonth = getDaysInMonth(monthIndex + 1, year);
 
-    enableRawMode();  // Enable raw mode for single character input
+    enableRawMode();  
 
     while (1) {
         printCalendar(day, monthIndex, year);
 
-        key = getchar();  // Get input key
+        key = getchar();  
 
         switch (key) {
-            case 'h':  // Move left (previous day)
+            case 'h':  
                 if (day > 1) day--;
                 break;
-            case 'l':  // Move right (next day)
+            case 'l': 
                 if (day < daysInMonth) day++;
                 break;
-            case 'j':  // Move down (next week)
+            case 'j': 
                 if (day + 7 <= daysInMonth) day += 7;
                 else day = daysInMonth;
                 break;
-            case 'k':  // Move up (previous week)
+            case 'k': 
                 if (day - 7 > 0) day -= 7;
                 else day = 1;
                 break;
             case 'm':  // Mark/unmark event
                 events[day - 1] = !events[day - 1];
                 break;
-            case 'q':  // Quit
+            case 'q':  
                 disableRawMode();  // Restore terminal settings
                 return;
             default:
@@ -142,8 +132,6 @@ void initializeWithCurrentDate() {
 }
 
 int main() {
-    printf("Welcome to the Calendar with Vim keybindings!\n");
-    printf("Navigate with h, j, k, l. Mark events with 'm'. Quit with 'q'.\n");
 
     // Initialize the event array to 0 (no events)
     for (int i = 0; i < 31; i++) {
