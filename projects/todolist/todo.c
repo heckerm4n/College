@@ -52,10 +52,11 @@ void printCalendar(int day, int monthIndex, int year) {
     printf(" Calendar for %d/%d\n", monthIndex + 1, year);
     printBorder(37);
     
+    printf("\033[38;5;157m");
     printf("| %-3s | %-2s | %-2s | %-2s | %-2s | %-2s | %-2s |\n", 
            "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa");
     printBorder(37);
-
+    printf("\033[0m");
     int date = 1;
     for (int row = 0; row < ROWS; row++) {
         printf("| ");
