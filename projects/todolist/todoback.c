@@ -78,7 +78,7 @@ void printCalendar(int day, int monthIndex, int year) {
     printBorder(34, 1); // Separator border
 
     int date = 1;
-    for (int row = 0; row < ROWS -1; row++) {
+    for (int row = 0; row < ROWS; row++) {
         printf("│");
         for (int col = 0; col < COLS; col++) {
             if (date <= daysInMonth && (row > 0 || col >= dayOfWeek)) {

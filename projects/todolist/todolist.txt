@@ -10,3 +10,7 @@ eld lab
 28/10/2024
 hi
 
+
+14/10/24 : 
+[] eld lab
+[x] eld class
