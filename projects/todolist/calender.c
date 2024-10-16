@@ -14,7 +14,7 @@ int month[ROWS][COLS];
 int events[31];
 int day, monthIndex, year;
 
-char tasks[31][MAX_TASKS][TASK_SIZE];  // Tasks for each day
+char tasks[31][MAX_TASKS][TASK_SIZE];  
 
 int getDaysInMonth(int month, int year) {
     switch (month) {
@@ -40,13 +40,13 @@ void disableRawMode() {
 }
 
 void printBorder(int width, int type) {
-    if (type == 0) {
+    if (type == 0) {    // for top border
         printf("┌");
         for (int i = 0; i < width; i++) {
             printf("─");
         }
         printf("┐\n");
-    } else if (type == 1) {
+    } else if (type == 1) { // for middel line
         printf("├");
         for (int i = 0; i < width; i++) {
             printf("─");
@@ -54,7 +54,7 @@ void printBorder(int width, int type) {
         printf("┤\n");
     } else {
         printf("└");
-        for (int i = 0; i < width; i++) {
+        for (int i = 0; i < width; i++) { // for bottom line 
             printf("─");
         }
         printf("┘\n");
@@ -67,7 +67,7 @@ void printCalendar(int day, int monthIndex, int year) {
     printf("\033[H\033[J"); // Clear screen
 
     printf(" Calendar for %02d/%d\n", monthIndex + 1, year);
-    printBorder(34, 0); // Top border
+    printBorder(34, 0); 
 
  
     printf("\033[38;5;157m");
@@ -75,7 +75,7 @@ void printCalendar(int day, int monthIndex, int year) {
            "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa");
     printf("\033[0m"); // Reset color
 
-    printBorder(34, 1); // Separator border
+    printBorder(34, 1);
 
     int date = 1;
     for (int row = 0; row < ROWS; row++) {

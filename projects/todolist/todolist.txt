@@ -1,8 +1,14 @@
 14/10/2024
-eld lab viva
+: 
 
 14/10/2024
-completed
+[] eld lab
+
+14/10/2024
+[x] eld class
+
+14/10/2024
+hello
 
 15/10/2024
 eld lab 
@@ -10,7 +16,3 @@ eld lab
 28/10/2024
 hi
 
-
-14/10/24 : 
-[] eld lab
-[x] eld class
