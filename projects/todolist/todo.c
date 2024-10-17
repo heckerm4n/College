@@ -33,10 +33,9 @@ int get_terminal_width() {
 }
 
 
-
-void render_screen() {
-    printf("\033[H\033[J"); // Clear the screen
-
+void print_title(){
+     // Clear the screen
+    printf("\033[H\033[J");
     int width = get_terminal_width();  // Get terminal width
     width = (width < 50) ? 50 : width; // Ensure minimum width
 
@@ -67,7 +66,12 @@ void render_screen() {
     }
     printf("╯\n" COLOR_RESET);
 
+
+}
+
+void render_screen() {
     // Render tasks
+    printf("\033[H\033[J");
     for (int i = 0; i < task_count; i++) {
         if (i == cursor) {
             printf(COLOR_HIGHLIGHT);
@@ -107,7 +111,7 @@ int main() {
     enable_raw_mode();  // Enter raw mode for key handling
 
     while (1) {
-        render_screen();
+        print_title();
         //handle_input();
     }
 
